@@ -267,13 +267,24 @@ a {
   padding-left: 12px;
   padding-right: 12px;
 }
+.mail{
+  word-break: break-word; /* hoặc break-all để ngắt ở bất kỳ ký tự nào */
+  overflow-wrap: break-word;
+}
 @media(max-width:600px){
+  .nav-items > :nth-child(3) {
+
+  }
+  .nav-links{
+    margin-right: 0;
+  }
+  .edit{
+    width: 100%;
+  }
   .r{
     display: block;
   }
-  .t{
-    padding-right: 0px;
-  }
+
   .pr{
     padding-left: 12px;
   }
