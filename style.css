@@ -16,7 +16,7 @@ a {
     }
     .navbar {
         
-    padding: 20px;
+    padding: 20px 40px;
     text-align: right;
    
     width: 100%;
@@ -42,7 +42,7 @@ a {
     display: inline-block;
     font-size: 20px;
     font-weight: 600;
-    margin-right: 15px;
+    margin-right: 50px;
     text-transform: uppercase;
     }
     
@@ -124,8 +124,14 @@ a {
     margin: 0px;
     padding-top: 70px;
     padding-bottom: 20px;
+    padding-left: 28px;
+    padding-right: 28px;
    
 }
+#brand-detail-container{
+  padding: 0 28px;
+}
+
 .text{
     display: flex;
     justify-content: space-between;
@@ -143,6 +149,10 @@ a {
 }
 .footer{
   margin: 0;
+  padding:  28px;
+}
+.content-about{
+  padding:  0 28px;
 }
 .item-footer ul{
   padding: 0;
@@ -189,7 +199,7 @@ a {
   font-size: 30px;
   line-height: 30px;
   text-align: justify;
-  padding-right: 35px;
+ 
 }
 .content-about{
   margin: 0;
@@ -203,7 +213,7 @@ a {
 .name-project{
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 12px;
+  
 }
 .name-project h3{
   font-size: 44px;
@@ -239,9 +249,7 @@ a {
 .r{
   display: none;
 }
-.content-detail{
-  padding: 0 12px;
-}
+
 .des{
   padding-right: 12px;
   text-align: justify;

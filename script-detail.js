@@ -25,7 +25,6 @@ fetch("https://bethany-eb426-default-rtdb.firebaseio.com/.json")
 			arr = Object.values(data.brands[key]);
 
 			for (let j = 0; j < arr.length; j++) {
-				console.log(arr[j].id === id);
 				if (arr[j].id === id) {
 					brandDetails = arr[j].detail;
 					break;
@@ -43,6 +42,7 @@ fetch("https://bethany-eb426-default-rtdb.firebaseio.com/.json")
 		//reder data ra ui
 		const brandDetailElement = document.createElement("div");
 		let contentBrand = "";
+		console.log(brandDetails);
 		if (brandDetails) {
 			contentBrand = `
       <div class="img-home-project">
