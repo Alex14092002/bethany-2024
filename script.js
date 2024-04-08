@@ -14,7 +14,6 @@ fetch("https://bethany-eb426-default-rtdb.firebaseio.com/.json")
 	.then((data) => {
 		//add title
 		const titleBrand = document.createElement("span");
-		titleBrand.innerText = data.title.content;
 
 		document.getElementById("title-brand").appendChild(titleBrand);
 

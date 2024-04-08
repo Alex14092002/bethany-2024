@@ -256,6 +256,7 @@ a {
 .des{
   padding-right: 12px;
   text-align: justify;
+  font-size: 20px;
 }
 .title-detail{
   font-weight: bold;
@@ -273,6 +274,13 @@ a {
 .mail{
   word-break: break-word; /* hoặc break-all để ngắt ở bất kỳ ký tự nào */
   overflow-wrap: break-word;
+}
+.content-about p{
+  font-size: 20px;
+  font-weight: 600;
+}
+.content-about p span{
+  color: #ff0000;
 }
 @media(max-width:600px){
   .nav-items > :nth-child(3) {
