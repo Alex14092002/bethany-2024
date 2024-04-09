@@ -171,13 +171,14 @@ a {
   line-height: 17px;
 }
 .edit{
-  line-height: 60px;
+  line-height: 20px !important;
  
  
   
 }
 .edit span{
-  font-size: 38px;
+  font-size: 30px;
+  line-height: 35px !important;
 }
 .end{
   text-align: end;
@@ -280,6 +281,7 @@ a {
 }
 .content-about p{
   font-size: 38px;
+  line-height: 30px;
   
 }
 .content-about p span{
