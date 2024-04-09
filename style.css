@@ -103,7 +103,7 @@ a {
     .toggle1 {
      margin-bottom: 0;
       transform: rotate(45deg) translate(9px, 0px);
-      background-color: #000;
+      background-color: #fff;
       transition: transform 400ms;
     }
      .toggle2 {
@@ -114,7 +114,7 @@ a {
      .toggle3 {
       margin-bottom: 0;
       transform: rotate(-45deg) translate(3px, 7px);
-      background-color: #000;
+      background-color: #fff;
        transition: transform 400ms;
     } 
 .text-content{
