@@ -62,7 +62,7 @@ a {
       margin-bottom: 5px;
       height: 2px;
       width: 30px;
-      background-color:#000;
+      background-color:#fff;
       transition: transform 400ms;
     }
     @media (max-width: 768px) {
@@ -88,7 +88,7 @@ a {
         transform: translate(-100%,-100%);
         height: 100%;
         width: 100%;
-        background-color: #fff;
+        background-color: #121110d1;
         padding: 35% 0;
     /*     transition: transform .6s ease-in-out; */
       }
@@ -295,7 +295,7 @@ a {
     margin-right: 0;
   }
   .edit{
-    width: 100%;
+    padding: 0 40px;
   }
   .r{
     display: block;
