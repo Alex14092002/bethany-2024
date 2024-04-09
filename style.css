@@ -66,6 +66,17 @@ a {
       transition: transform 400ms;
     }
     @media (max-width: 768px) {
+      .text-item p{
+        font-size: 13px !important;
+        line-height: 15px !important;
+      }
+      .text-item{
+        line-height: 10px !important;
+      }
+      .content-about p{
+        font-size: 20px !important;
+        line-height: 20px !important;
+      }
        .nav-links  a{
         color: #fff;
     }
@@ -210,7 +221,7 @@ a {
 }
 .content-about{
   margin: 0;
- 
+  height: 100vh;
   padding-top: 20px;
   padding-bottom: 20px;
 }
