@@ -299,8 +299,15 @@ a {
   color: #ff0000;
 }
 @media(max-width:600px){
-  .nav-items > :nth-child(3) {
-
+  .edit{
+    margin-bottom: 50px;
+  }
+  .content-main{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .box-item{
+    margin: 10px 0;
   }
   .nav-links{
     margin-right: 0;
