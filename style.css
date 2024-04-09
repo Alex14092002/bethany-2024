@@ -172,9 +172,12 @@ a {
 }
 .edit{
   line-height: 60px;
-  font-weight: 500;
+ 
  
   
+}
+.edit span{
+  font-size: 38px;
 }
 .end{
   text-align: end;
@@ -276,8 +279,8 @@ a {
   overflow-wrap: break-word;
 }
 .content-about p{
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 38px;
+  
 }
 .content-about p span{
   color: #ff0000;
