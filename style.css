@@ -179,7 +179,7 @@ a {
 .item-footer ul li{
   font-size: 15px;
   font-weight: 600;
-  line-height: 25px;
+  
 }
 .edit{
   line-height: 20px !important;
@@ -299,6 +299,9 @@ a {
   color: #ff0000;
 }
 @media(max-width:600px){
+  .item-footer ul li{
+    line-height: 25px;
+  }
   .edit{
     margin-bottom: 50px;
   }
