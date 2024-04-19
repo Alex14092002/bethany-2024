@@ -8,21 +8,19 @@ button.addEventListener("click", () => {
 	button.children[2].classList.toggle("toggle3");
 });
 
-//render giao dien trang chu
+// Render giao diện trang chủ
 fetch("https://bethany-eb426-default-rtdb.firebaseio.com/.json")
 	.then((response) => response.json())
 	.then((data) => {
-		//get id to param url
+		// Get id from URL parameters
 		const currentUrl = window.location.href;
-
 		const urlParams = new URLSearchParams(new URL(currentUrl).search);
-
 		const id = urlParams.get("id");
 		let brandDetails = {};
 
+		// Loop through the data to find the matching brand
 		for (const key in data.brands) {
-			let arr = [];
-			arr = Object.values(data.brands[key]);
+			let arr = Object.values(data.brands[key]);
 
 			for (let j = 0; j < arr.length; j++) {
 				if (arr[j].id === id) {
@@ -39,60 +37,76 @@ fetch("https://bethany-eb426-default-rtdb.firebaseio.com/.json")
 		const arrImage = Object.values(brandDetails.images);
 		console.log(arrImage);
 
-		//reder data ra ui
+		// Render data to UI
 		const brandDetailElement = document.createElement("div");
 		let contentBrand = "";
 		console.log(brandDetails);
 		if (brandDetails) {
-			contentBrand = `
-      <div class="img-home-project">
-        <img src="${arrImage[0].url}" alt="${arrImage[0].alt}" width="100%" />
-      </div>
-     <div class="row ">
-      <div class="col-12 col-xl-6">
-      <div class="name-project">
-      <h3>${brandDetails.name}</h3>
-    </div>
-    <div class="content-detail">
-    <table >
-      <tr>
-        <td class='title-detail'>Year</td>
-        <td class="value-detail">${brandDetails.year}</td>
-      </tr>
-      <tr>
-        <td class='title-detail'>Studio: </td>
-        <td class="value-detail">${brandDetails.studio}</td>
-      </tr>
-      <tr>
-        <td class='title-detail'>Role: </td>
-        <td class="value-detail">${brandDetails.role}</td>
-      </tr>
-      <tr>
-        <td class='title-detail'>Responsibilities: </td>
-        <td class="value-detail">${brandDetails.Responsibilities}</td>
-      </tr>
-    </table>
-    </div>
-      </div>
-      <div class="col-12 col-xl-6 mt-3 mt-md-5 ">
-      <p class='des'>${brandDetails.describe}</p>
-    </div>
-    
-     </div>
-    `;
-		} else {
-			contentBrand = "";
+			contentBrand = `<div class="img-home-project">`;
+
+			// Check if the first image URL ends with .mp4 to use video tag
+			if (arrImage[0].url.endsWith(".mp4")) {
+				contentBrand += `
+                    <video width="100%" controls autoplay loop>
+                        <source src="${arrImage[0].url}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>`;
+			} else {
+				contentBrand += `
+                    <img src="${arrImage[0].url}" alt="${arrImage[0].alt}" width="100%" />`;
+			}
+
+			contentBrand += `</div>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="name-project">
+                        <h3>${brandDetails.name}</h3>
+                    </div>
+                    <div class="content-detail">
+                        <table>
+                            <tr>
+                                <td class='title-detail'>Year</td>
+                                <td class="value-detail">${brandDetails.year}</td>
+                            </tr>
+                            <tr>
+                                <td class='title-detail'>Studio:</td>
+                                <td class="value-detail">${brandDetails.studio}</td>
+                            </tr>
+                            <tr>
+                                <td class='title-detail'>Role:</td>
+                                <td class="value-detail">${brandDetails.role}</td>
+                            </tr>
+                            <tr>
+                                <td class='title-detail'>Responsibilities:</td>
+                                <td class="value-detail">${brandDetails.Responsibilities}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-6 mt-3 mt-md-5">
+                    <p class='des'>${brandDetails.describe}</p>
+                </div>
+            </div>`;
 		}
 
 		for (let i = 1; i < arrImage.length; i++) {
-			contentBrand += `
-      <div class="img-item">
-        <img src="${arrImage[i].url}" alt="${arrImage[i].url}" width="100%" />
-      </div>`;
+			if (arrImage[i].url.endsWith(".mp4")) {
+				contentBrand += `
+					<div class="img-item">
+						<video width="100%" controls autoplay loop>
+							<source src="${arrImage[i].url}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</div>`;
+			} else {
+				contentBrand += `
+					<div class="img-item">
+						<img src="${arrImage[i].url}" alt="${arrImage[i].alt}" width="100%" />
+					</div>`;
+			}
 		}
 
 		brandDetailElement.innerHTML = contentBrand;
-
 		document
 			.getElementById("brand-detail-container")
 			.appendChild(brandDetailElement);
