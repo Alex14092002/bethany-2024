@@ -212,6 +212,8 @@ li {
   height: 100vh;
   padding-top: 20px;
   padding-bottom: 20px;
+  color: #000;
+  background-color: #fff;
 }
 .row {
   margin: 0;
@@ -284,6 +286,15 @@ li {
 .content-about p span {
   color: #ff0000;
 }
+.box-item a img {
+  border-radius: 30px;
+}
+#title-brand {
+  font-size: 30px;
+  line-height: 35px !important;
+  text-align: justify;
+}
+
 @media (max-width: 600px) {
   .item-footer ul li {
     line-height: 25px;
