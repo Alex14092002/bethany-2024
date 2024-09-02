@@ -1,6 +1,20 @@
-@import url("https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro");
+@import url(https://db.onlinewebfonts.com/c/eb270b13b84d5a43462737e3fb0a268d?family=Suisse+Intl+Regular);
+@font-face {
+  font-family: "Suisse Intl Regular";
+  src: url("https://db.onlinewebfonts.com/t/eb270b13b84d5a43462737e3fb0a268d.eot");
+  src: url("https://db.onlinewebfonts.com/t/eb270b13b84d5a43462737e3fb0a268d.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/eb270b13b84d5a43462737e3fb0a268d.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/eb270b13b84d5a43462737e3fb0a268d.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/eb270b13b84d5a43462737e3fb0a268d.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/eb270b13b84d5a43462737e3fb0a268d.svg#Suisse Intl Regular")
+      format("svg");
+}
 body {
-  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-family: "Suisse Intl Regular";
   background-color: #000 !important;
   color: #fff !important;
 }
@@ -169,11 +183,11 @@ li {
   padding: 0;
 }
 .item-footer h5 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
 }
 .item-footer ul li {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
 }
 .edit {
@@ -247,6 +261,9 @@ li {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.img-item img {
+  border-radius: 10px;
+}
 .hidden p {
   font-size: 25px;
 }
@@ -294,6 +311,10 @@ li {
   line-height: 35px !important;
 
   margin-top: 10px;
+}
+.right-header {
+  font-size: 20px;
+  font-weight: 600;
 }
 
 @media (max-width: 600px) {
