@@ -2,39 +2,39 @@ var button = document.querySelector(".ham-button");
 var slide = document.querySelector(".nav-items");
 
 button.addEventListener("click", () => {
-	slide.classList.toggle("display");
-	button.children[0].classList.toggle("toggle1");
-	button.children[1].classList.toggle("toggle2");
-	button.children[2].classList.toggle("toggle3");
+  slide.classList.toggle("display");
+  button.children[0].classList.toggle("toggle1");
+  button.children[1].classList.toggle("toggle2");
+  button.children[2].classList.toggle("toggle3");
 });
 
 //render giao dien trang chu
 fetch("https://bethany-eb426-default-rtdb.firebaseio.com/.json")
-	.then((response) => response.json())
-	.then((data) => {
-		//add title
-		const titleBrand = document.createElement("span");
+  .then((response) => response.json())
+  .then((data) => {
+    //add title
+    const titleBrand = document.createElement("span");
 
-		document.getElementById("title-brand").appendChild(titleBrand);
+    document.getElementById("title-brand").appendChild(titleBrand);
 
-		for (const key in data.brands) {
-			let brand = [];
+    for (const key in data.brands) {
+      let brand = [];
 
-			brand = Object.values(data.brands[key]);
-			console.log(brand);
-			const quantityCol = brand[0].numberCol;
+      brand = Object.values(data.brands[key]);
+      console.log(brand);
+      const quantityCol = brand[0].numberCol;
 
-			const quantityBrand = brand.length;
+      const quantityBrand = brand.length;
 
-			//option 2 col
+      //option 2 col
 
-			if (quantityCol === 2) {
-				const brand2Div = document.createElement("div");
-				if (quantityBrand === 1) {
-					const locationBrand = brand[0].location;
+      if (quantityCol === 2) {
+        const brand2Div = document.createElement("div");
+        if (quantityBrand === 1) {
+          const locationBrand = brand[0].location;
 
-					if (locationBrand === 1) {
-						brand2Div.innerHTML = `
+          if (locationBrand === 1) {
+            brand2Div.innerHTML = `
             <div class="content-main row">
               <div id="${brand[0].id}" class="box-item col-12 col-sm-6">
                 <a href="detail.html?id=${brand[0].id}"
@@ -53,8 +53,8 @@ fetch("https://bethany-eb426-default-rtdb.firebaseio.com/.json")
                 </div>
                 </div>
               `;
-					} else {
-						brand2Div.innerHTML = `
+          } else {
+            brand2Div.innerHTML = `
             <div class="content-main row">
               <div id="${brand[0].id}" class="box-item col-12 col-md-6 offset-md-6">
                 <a href="detail.html?id=${brand[0].id}"
@@ -73,18 +73,18 @@ fetch("https://bethany-eb426-default-rtdb.firebaseio.com/.json")
                 </div>
                 </div>
               `;
-					}
-				} else if (quantityBrand === 2) {
-					let objectBrand1 = {};
-					let objectBrand2 = {};
-					brand.forEach((e) => {
-						if (e.location === 1) {
-							objectBrand1 = e;
-						} else if (e.location === 2) {
-							objectBrand2 = e;
-						}
-					});
-					brand2Div.innerHTML = `
+          }
+        } else if (quantityBrand === 2) {
+          let objectBrand1 = {};
+          let objectBrand2 = {};
+          brand.forEach((e) => {
+            if (e.location === 1) {
+              objectBrand1 = e;
+            } else if (e.location === 2) {
+              objectBrand2 = e;
+            }
+          });
+          brand2Div.innerHTML = `
             <div class="content-main row">
               <div id="${objectBrand1.id}" class="box-item col-12 col-md-6">
                 <a href="detail.html?id=${objectBrand1.id}"
@@ -121,16 +121,16 @@ fetch("https://bethany-eb426-default-rtdb.firebaseio.com/.json")
               </div>
           </div>
               `;
-				}
-				document.getElementById("brand-content").appendChild(brand2Div);
-			}
-			//option 3 col
-			if (quantityCol === 3) {
-				const brand3Div = document.createElement("div");
-				if (quantityBrand === 1) {
-					const locationBrand = brand[0].location;
-					if (locationBrand === 1) {
-						brand3Div.innerHTML = `
+        }
+        document.getElementById("brand-content").appendChild(brand2Div);
+      }
+      //option 3 col
+      if (quantityCol === 3) {
+        const brand3Div = document.createElement("div");
+        if (quantityBrand === 1) {
+          const locationBrand = brand[0].location;
+          if (locationBrand === 1) {
+            brand3Div.innerHTML = `
             <div class="content-main row t" id="artwork">
               <div id="${brand[0].id}" class="box-item col-12 col-md-4">
                 <a href="detail.html?id=${brand[0].id}">
@@ -150,8 +150,8 @@ fetch("https://bethany-eb426-default-rtdb.firebaseio.com/.json")
               </div>
             </div>
               `;
-					} else if (locationBrand === 2) {
-						brand3Div.innerHTML = `
+          } else if (locationBrand === 2) {
+            brand3Div.innerHTML = `
             <div class="content-main row t" id="artwork">
               <div id="${brand[0].id}" class="box-item col-12 col-md-4 offset-md-4">
                 <a href="detail.html?id=${brand[0].id}">
@@ -171,8 +171,8 @@ fetch("https://bethany-eb426-default-rtdb.firebaseio.com/.json")
               </div>
             </div>
               `;
-					} else if (locationBrand === 3) {
-						brand3Div.innerHTML = `
+          } else if (locationBrand === 3) {
+            brand3Div.innerHTML = `
             <div class="content-main row t" id="artwork">
               <div id="${brand[0].id}" class="box-item col-12 col-md-4 offset-md-8">
                 <a href="detail.html?id=${brand[0].id}">
@@ -192,24 +192,24 @@ fetch("https://bethany-eb426-default-rtdb.firebaseio.com/.json")
               </div>
             </div>
               `;
-					}
-				} else if (quantityBrand === 2) {
-					const locationBrand0 = brand[0].location;
-					const locationBrand1 = brand[1].location;
-					if (
-						(locationBrand0 === 1 && locationBrand1 === 2) ||
-						(locationBrand0 === 2 && locationBrand1 === 1)
-					) {
-						let objectBrand1 = {};
-						let objectBrand2 = {};
-						brand.forEach((e) => {
-							if (e.location === 1) {
-								objectBrand1 = e;
-							} else if (e.location === 2) {
-								objectBrand2 = e;
-							}
-						});
-						brand3Div.innerHTML = `
+          }
+        } else if (quantityBrand === 2) {
+          const locationBrand0 = brand[0].location;
+          const locationBrand1 = brand[1].location;
+          if (
+            (locationBrand0 === 1 && locationBrand1 === 2) ||
+            (locationBrand0 === 2 && locationBrand1 === 1)
+          ) {
+            let objectBrand1 = {};
+            let objectBrand2 = {};
+            brand.forEach((e) => {
+              if (e.location === 1) {
+                objectBrand1 = e;
+              } else if (e.location === 2) {
+                objectBrand2 = e;
+              }
+            });
+            brand3Div.innerHTML = `
             <div class="content-main row t" id="artwork">
               <div id="${objectBrand1.id}" class="box-item col-12 col-md-4">
                 <a href="detail.html?id=${objectBrand1.id}">
@@ -245,21 +245,21 @@ fetch("https://bethany-eb426-default-rtdb.firebaseio.com/.json")
               </div>
             </div>
               `;
-					}
-					if (
-						(locationBrand0 === 1 && locationBrand1 === 3) ||
-						(locationBrand0 === 3 && locationBrand1 === 1)
-					) {
-						let objectBrand1 = {};
-						let objectBrand3 = {};
-						brand.forEach((e) => {
-							if (e.location === 1) {
-								objectBrand1 = e;
-							} else if (e.location === 3) {
-								objectBrand3 = e;
-							}
-						});
-						brand3Div.innerHTML = `
+          }
+          if (
+            (locationBrand0 === 1 && locationBrand1 === 3) ||
+            (locationBrand0 === 3 && locationBrand1 === 1)
+          ) {
+            let objectBrand1 = {};
+            let objectBrand3 = {};
+            brand.forEach((e) => {
+              if (e.location === 1) {
+                objectBrand1 = e;
+              } else if (e.location === 3) {
+                objectBrand3 = e;
+              }
+            });
+            brand3Div.innerHTML = `
             <div class="content-main row t" id="artwork">
               <div id="${objectBrand1.id}" class="box-item col-12 col-md-4">
                 <a href="detail.html?id=${objectBrand1.id}">
@@ -295,21 +295,21 @@ fetch("https://bethany-eb426-default-rtdb.firebaseio.com/.json")
               </div>
             </div>
               `;
-					}
-					if (
-						(locationBrand0 === 2 && locationBrand1 === 3) ||
-						(locationBrand0 === 3 && locationBrand1 === 2)
-					) {
-						let objectBrand2 = {};
-						let objectBrand3 = {};
-						brand.forEach((e) => {
-							if (e.location === 2) {
-								objectBrand2 = e;
-							} else if (e.location === 3) {
-								objectBrand3 = e;
-							}
-						});
-						brand3Div.innerHTML = `
+          }
+          if (
+            (locationBrand0 === 2 && locationBrand1 === 3) ||
+            (locationBrand0 === 3 && locationBrand1 === 2)
+          ) {
+            let objectBrand2 = {};
+            let objectBrand3 = {};
+            brand.forEach((e) => {
+              if (e.location === 2) {
+                objectBrand2 = e;
+              } else if (e.location === 3) {
+                objectBrand3 = e;
+              }
+            });
+            brand3Div.innerHTML = `
             <div class="content-main row t" id="artwork">
               <div id="${objectBrand2.id}" class="box-item col-12 col-md-4 offset-md-4">
                 <a href="detail.html?id=${objectBrand2.id}">
@@ -345,21 +345,21 @@ fetch("https://bethany-eb426-default-rtdb.firebaseio.com/.json")
               </div>
             </div>
               `;
-					}
-				} else if (quantityBrand === 3) {
-					let objectBrand1 = {};
-					let objectBrand2 = {};
-					let objectBrand3 = {};
-					brand.forEach((e) => {
-						if (e.location === 1) {
-							objectBrand1 = e;
-						} else if (e.location === 2) {
-							objectBrand2 = e;
-						} else if (e.location === 3) {
-							objectBrand3 = e;
-						}
-					});
-					brand3Div.innerHTML = `
+          }
+        } else if (quantityBrand === 3) {
+          let objectBrand1 = {};
+          let objectBrand2 = {};
+          let objectBrand3 = {};
+          brand.forEach((e) => {
+            if (e.location === 1) {
+              objectBrand1 = e;
+            } else if (e.location === 2) {
+              objectBrand2 = e;
+            } else if (e.location === 3) {
+              objectBrand3 = e;
+            }
+          });
+          brand3Div.innerHTML = `
             <div class="content-main row t" id="artwork">
               <div id="${objectBrand1.id}" class="box-item col-12 col-md-4">
                 <a href="detail.html?id=${objectBrand1.id}">
@@ -411,12 +411,31 @@ fetch("https://bethany-eb426-default-rtdb.firebaseio.com/.json")
               </div>
             </div>
               `;
-				}
+        }
 
-				document.getElementById("brand-content").appendChild(brand3Div);
-			}
-		}
-	})
-	.catch((error) => {
-		console.error("Error fetching data:", error);
-	});
+        document.getElementById("brand-content").appendChild(brand3Div);
+      }
+    }
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error);
+  });
+function updateClock() {
+  const clockElement = document.getElementById("clock");
+
+  // Lấy thời gian hiện tại của hệ thống
+  const now = new Date();
+
+  // Chuyển thời gian hiện tại về múi giờ Auckland (GMT+12)
+  const options = { timeZone: "Pacific/Auckland", hour12: false };
+  const timeString = now.toLocaleTimeString("en-GB", options);
+
+  // Cập nhật đồng hồ trên giao diện
+  clockElement.innerText = timeString;
+}
+
+// Cập nhật đồng hồ mỗi giây
+setInterval(updateClock, 1000);
+
+// Khởi tạo đồng hồ khi tải trang
+updateClock();
