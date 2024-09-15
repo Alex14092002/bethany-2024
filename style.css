@@ -13,6 +13,9 @@ a {
   text-decoration: none;
   color: #fff;
 }
+a:hover {
+  color: #b1ff00;
+}
 .header {
   background-color: #000;
 }
