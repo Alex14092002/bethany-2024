@@ -215,11 +215,11 @@ li {
 }
 .content-about {
   margin: 0;
-  height: 100vh;
+  /* height: 100vh; */
   padding-top: 20px;
   padding-bottom: 20px;
-  color: #000;
-  background-color: #fff;
+  color: #fff;
+  /* background-color: #fff; */
 }
 .row {
   margin: 0;
