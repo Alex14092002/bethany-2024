@@ -9,7 +9,9 @@ button.addEventListener("click", () => {
 });
 
 // Render giao diện trang chủ
-fetch("https://bethany-eb426-default-rtdb.firebaseio.com/.json")
+fetch(
+  "https://bethany-eb426-default-rtdb.firebaseio.com/-O73mEgCROJzGUG5iDaC.json"
+)
   .then((response) => response.json())
   .then((data) => {
     // Get id from URL parameters
