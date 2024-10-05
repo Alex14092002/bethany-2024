@@ -441,3 +441,12 @@ setInterval(updateClock, 1000);
 
 // Khởi tạo đồng hồ khi tải trang
 updateClock();
+
+const circleCursor = document.querySelector(".circle-cursor");
+
+document.addEventListener("mousemove", (e) => {
+  const x = e.pageX;
+  const y = e.pageY;
+  circleCursor.style.left = `${x}px`;
+  circleCursor.style.top = `${y}px`;
+});
