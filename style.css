@@ -160,7 +160,7 @@ li {
 }
 .text-item p {
   margin: 0px;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 20px;
 }
@@ -182,7 +182,7 @@ li {
   font-weight: 600;
 }
 .item-footer ul li {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 600;
 }
 .edit {
