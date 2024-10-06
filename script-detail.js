@@ -82,6 +82,10 @@ fetch(
                                 <td class='title-detail'>Responsibilities:</td>
                                 <td class="value-detail">${brandDetails.Responsibilities}</td>
                             </tr>
+                              <tr>
+                                <td class='title-detail'>Credits:</td>
+                                <td class="value-detail">${brandDetails.Credits}</td>
+                            </tr>
                         </table>
                     </div>
                 </div>
