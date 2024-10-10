@@ -318,6 +318,9 @@ li {
 }
 
 @media (max-width: 600px) {
+  .right-header {
+    display: none;
+  }
   .item-footer ul li {
     line-height: 25px;
   }
