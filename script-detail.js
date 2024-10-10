@@ -59,11 +59,12 @@ fetch(
       }
 
       contentBrand += `</div>
-            <div class="row">
-                <div class="col-12 col-xl-6">
-                    <div class="name-project">
+       <div class="name-project">
                         <h3>${brandDetails.name}</h3>
                     </div>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                   
                     <div class="content-detail">
                         <table>
                             <tr>
@@ -89,7 +90,7 @@ fetch(
                         </table>
                     </div>
                 </div>
-                <div class="col-12 col-xl-6 mt-3 mt-md-5">
+                <div class="col-12 col-xl-6 ">
                     <p class='des'>${brandDetails.describe}</p>
                 </div>
             </div>`;
