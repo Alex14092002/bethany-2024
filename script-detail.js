@@ -38,7 +38,7 @@ fetch(
 
     const arrImage = Object.values(brandDetails.images);
     console.log(arrImage);
-
+    document.title = brandDetails.name || "Trang chủ";
     // Render data to UI
     const brandDetailElement = document.createElement("div");
     let contentBrand = "";
@@ -59,12 +59,12 @@ fetch(
       }
 
       contentBrand += `</div>
-       <div class="name-project">
-                        <h3>${brandDetails.name}</h3>
-                    </div>
+     
             <div class="row">
                 <div class="col-12 col-xl-6">
-                   
+                     <div class="name-project">
+                        <h3>${brandDetails.name}</h3>
+                    </div>
                     <div class="content-detail">
                         <table>
                             <tr>
