@@ -467,7 +467,11 @@ body {
   }
 
   .value-detail {
-    padding-left: 10px; /* Khoảng cách lề trái cho giá trị */
+    padding-left: 0; /* Khoảng cách lề trái cho giá trị */
     margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .des{
+    padding-top: 30px;
   }
 }

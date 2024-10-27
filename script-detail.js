@@ -60,7 +60,7 @@ fetch(
 
 			contentBrand += `</div>
      
-            <div class="row">
+            <div class="row py-5">
                 <div class="col-12 col-xl-6">
                      <div class="name-project">
                         <h3>${brandDetails.name}</h3>
