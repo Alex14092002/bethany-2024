@@ -444,3 +444,30 @@ body {
 .value-detail {
   font-size: 22px;
 }
+/* Chỉ áp dụng thay đổi cho màn hình nhỏ hơn 768px */
+@media (max-width: 768px) {
+  .content-detail table {
+    width: 100%;
+    display: block; /* Hiển thị dưới dạng block cho mobile */
+  }
+
+  .content-detail table tr {
+    display: block; /* Mỗi hàng là một block */
+    margin-bottom: 10px; /* Khoảng cách giữa các hàng */
+  }
+
+  .content-detail table td {
+    display: block; /* Hiển thị tiêu đề và giá trị trên hai dòng riêng */
+    width: 100%;
+  }
+
+  .title-detail {
+    font-weight: bold;
+    margin-bottom: 5px; /* Khoảng cách giữa tiêu đề và giá trị */
+  }
+
+  .value-detail {
+    padding-left: 10px; /* Khoảng cách lề trái cho giá trị */
+    margin-bottom: 10px;
+  }
+}
