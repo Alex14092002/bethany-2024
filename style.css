@@ -228,7 +228,6 @@ li {
   margin: 0;
 }
 .name-project {
-  
   padding-bottom: 20px;
 }
 .name-project h3 {
@@ -398,6 +397,19 @@ li {
   height: auto;
   z-index: 10000;
 }
+.profile-image-3 {
+  display: none; /* Hide the image by default */
+  position: absolute;
+  top: -50px; /* Adjust the position above the text */
+  left: 50%; /* Adjust the position to the right */
+  transform: translateX(-50%);
+  width: 100px; /* Adjust the size of the image */
+  height: auto;
+  z-index: 10000;
+}
+.img-3 {
+  width: 130px !important;
+}
 .profile-image-2 {
   display: none; /* Hide the image by default */
   position: absolute;
@@ -471,7 +483,13 @@ body {
     margin-bottom: 10px;
     font-size: 16px;
   }
-  .des{
+  .des {
     padding-top: 30px;
+  }
+  #title-brand {
+    font-size: 20px;
+  }
+  .item-footer ul li {
+    font-size: 12px !important;
   }
 }
