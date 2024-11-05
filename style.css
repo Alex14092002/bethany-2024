@@ -488,8 +488,13 @@ body {
   }
   #title-brand {
     font-size: 20px;
+    line-height: 20px !important;
+  }
+  .text-content span {
+    line-height: 20px !important;
   }
   .item-footer ul li {
     font-size: 12px !important;
+    line-height: 15px !important;
   }
 }
